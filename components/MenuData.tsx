@@ -2,7 +2,6 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { TbClock } from "react-icons/tb";
-import InfoSlide from "./InfoSlide";
 import Card from "./Card";
 import Events from "./Events";
 
