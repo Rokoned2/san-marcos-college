@@ -55,11 +55,13 @@ const Events = () => {
         <h2 className="inline text-[2rem] font-bold text-[#3a464f] pr-2">
           Eventos
         </h2>
-        <p className="inline text-[#b0191c] font-bold">Ver más</p>
+        <p className="inline text-[#b0191c] font-bold cursor-pointer hover:text-[#70191c] transition-colors">
+          Ver más
+        </p>
       </div>
       <div className="bg-white pt-[0.8rem] px-5 pb-5 flex-1 overflow-scroll">
         {events.map(({ startDate, endDate, title, place }, index) => (
-          <div className="flex mb-[15px]" key={index}>
+          <div className="flex mb-[15px] cursor-pointer" key={index}>
             <div className="w-[2.8125rem] h-[2.8125rem] mt-[0.4rem] bg-[#3a464f] text-white flex flex-col text-center items-center justify-center shrink-0	">
               <span className="font-bold text-xl leading-4	">
                 {startDate.format("D")}

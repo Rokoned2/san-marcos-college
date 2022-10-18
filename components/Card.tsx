@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div
-      className={`h-[360px] bg-white flex-1 flex flex-col ${classNamePlus} drop-shadow-md`}
+      className={`h-[360px] bg-white flex-1 flex flex-col ${classNamePlus} drop-shadow-md cursor-pointer`}
     >
       <img src={image} alt="" />
       <div className="px-4 py-4 flex flex-col flex-1">

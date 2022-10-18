@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import { TbClock } from "react-icons/tb";
 import Card from "./Card";
 import Events from "./Events";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const mainNews = [
   {
@@ -82,40 +84,68 @@ const regularNews = [
 ];
 
 const NewsSection = () => {
+  const [prevEl, setPrevEl] = useState<HTMLElement | null>(null);
+  const [nextEl, setNextEl] = useState<HTMLElement | null>(null);
+
   return (
     <section className="bg-auto bg-center bg-repeat z-10 bg-[url('https://unmsm.edu.pe/img/backgrounds/fondo-noticias-y%20eventos-pagina-central.png')]">
-      <section className=" bg-right	bg-no-repeat bg-[length:560px] z-10 bg-[url('https://unmsm.edu.pe/img/backgrounds/plazuela-iglesia-san-carlos-pagina-central-unmsm.png')]">
+      <section className=" bg-right-top	bg-no-repeat bg-[length:560px] z-10 bg-[url('https://unmsm.edu.pe/img/backgrounds/plazuela-iglesia-san-carlos-pagina-central-unmsm.png')]">
         <div className="max-w-[510px] md:max-w-[690px] lg:max-w-[930px] xl:max-w-[1110px] mx-auto pt-1 md:pt-11 px-4 md:px-0">
-          <div className="mb-5">
+          <div className="mb-5 ">
             <h2 className="inline text-[2rem] font-bold text-[#3a464f] pr-2">
               Noticias
             </h2>
-            <p className="inline text-[#b0191c] font-bold">Ver más</p>
+            <p className="inline text-[#b0191c] hover:text-[#70191c] transition-colors  font-bold cursor-pointer">
+              Ver más
+            </p>
           </div>
-          <Swiper className="md:h-[22.9rem] mb-6" loop={true}>
-            {mainNews.map(({ image, title, description, date }, index) => (
-              <SwiperSlide className="md:flex " key={index}>
-                <div className=" h-full relative md:w-3/5">
-                  <img className="h-full object-cover" src={image} alt="" />
-                </div>
-                <div className="md:w-2/5 flex flex-col pt-6 pb-5 pl-4 pr-5 bg-white">
-                  <span className="self-start	border-[1px] px-[7px] mb-5 rounded border-[#3a464f] text-[13px] text-[#3a464f] font-bold">
-                    Destacado
-                  </span>
-                  <h3 className="font-bold mb-5 md:line-clamp-4">{title}</h3>
-                  <p className="line-clamp-[7] md:line-clamp-5 lg:line-clamp-[6] xl:line-clamp-[7]">
-                    {description}
-                  </p>
-                  <div className="mt-auto flex text-[#54626c] opacity-50">
-                    <TbClock className="inline-block mr-1.5" />
-                    <p className="inline-block text-xs leading-5	text-[#54626c]">
-                      {date}
-                    </p>
+          <div className="relative">
+            <Swiper
+              className="md:h-[22.9rem] mb-6"
+              loop={true}
+              navigation={{ prevEl, nextEl }}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay, Navigation]}
+            >
+              {mainNews.map(({ image, title, description, date }, index) => (
+                <SwiperSlide className="md:flex cursor-pointer" key={index}>
+                  <div className=" h-full relative md:w-3/5">
+                    <img className="h-full object-cover" src={image} alt="" />
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                  <div className="md:w-2/5 flex flex-col pt-6 pb-5 pl-4 pr-5 bg-white">
+                    <span className="self-start	border-[1px] px-[7px] mb-5 rounded border-[#3a464f] text-[13px] text-[#3a464f] font-bold">
+                      Destacado
+                    </span>
+                    <h3 className="font-bold mb-5 md:line-clamp-4">{title}</h3>
+                    <p className="line-clamp-[7] md:line-clamp-5 lg:line-clamp-[6] xl:line-clamp-[7]">
+                      {description}
+                    </p>
+                    <div className="mt-auto flex text-[#54626c] opacity-50">
+                      <TbClock className="inline-block mr-1.5" />
+                      <p className="inline-block text-xs leading-5	text-[#54626c]">
+                        {date}
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div
+              className="absolute top-1/2 -left-4 z-20 bg-white rounded w-8 h-8 flex items-center justify-center drop-shadow-lg cursor-pointer"
+              ref={(node) => setPrevEl(node)}
+            >
+              <IoIosArrowBack className="text-2xl text-[#b0191c] stroke-[20] stroke-[#b0191c]" />
+            </div>
+            <div
+              className="absolute top-1/2 -right-4 z-20 bg-white rounded w-8 h-8 flex items-center justify-center drop-shadow-lg cursor-pointer"
+              ref={(node) => setNextEl(node)}
+            >
+              <IoIosArrowForward className="text-2xl text-[#b0191c] stroke-[20]	stroke-[#b0191c]" />
+            </div>
+          </div>
           <div className="flex flex-col md:flex-row ">
             <div className="flex space-x-6 md:w-3/5 ">
               {regularNews.map(({ id, image, title, description, date }) => (
@@ -125,7 +155,7 @@ const NewsSection = () => {
                   title={title}
                   description={description}
                   date={date}
-                  classNamePlus="last:hidden lg:last:block"
+                  classNamePlus="last:hidden lg:last:block cursor-pointer"
                 />
               ))}
             </div>

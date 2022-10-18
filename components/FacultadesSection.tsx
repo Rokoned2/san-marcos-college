@@ -4,7 +4,7 @@ import FacultadItem from "./FacultadItem";
 const FacultadesSection = () => {
   return (
     <section className="bg-auto bg-center bg-repeat z-10 bg-[url('https://unmsm.edu.pe/img/backgrounds/fondo-noticias-y%20eventos-pagina-central.png')]">
-      <div className="max-w-[510px] md:max-w-[690px] lg:max-w-[930px] xl:max-w-[1110px] mx-auto pt-10 md:pt-36 px-4 md:px-0">
+      <div className="max-w-[510px] md:max-w-[690px] lg:max-w-[930px] xl:max-w-[1110px] mx-auto px-4 md:px-0">
         <h2 className=" text-[2rem] font-bold text-[#3a464f] pr-2 mb-4 leading-[1.2] md:hidden">
           Facultades{" "}
           <img
@@ -16,7 +16,7 @@ const FacultadesSection = () => {
         <div className="md:flex md:pb-5 lg:pb-2	md:space-x-2 items-center">
           <FacultadItem
             image="https://unmsm.edu.pe/img/facultades/ciencias-de-la-salud-home-unmsm.png"
-            color="#71151B"
+            color="bg-[#71151B]"
             title="Ciencias de la Salud"
             subtitles={[
               {
@@ -51,7 +51,7 @@ const FacultadesSection = () => {
                 Contamos con más de 60 carreras distribuidas en 20 facultades
               </p>
               <a
-                className="text-[#b0191c] font-bold"
+                className="text-[#b0191c] hover:text-[#70191c] transition-colors font-bold"
                 href={"https://unmsm.edu.pe/formacion-academica/facultades"}
               >
                 Ver más
@@ -60,7 +60,7 @@ const FacultadesSection = () => {
           </div>
           <FacultadItem
             image="https://unmsm.edu.pe/img/facultades/ciencias-basicas-home-unmsm.png"
-            color="#BBB651"
+            color="bg-[#BBB651]"
             title="Ciencias Básicas"
             subtitles={[
               {
@@ -86,7 +86,7 @@ const FacultadesSection = () => {
         <div className="md:flex md:space-x-2">
           <FacultadItem
             image="https://unmsm.edu.pe/img/facultades/ingenierias-home-unmsm.png"
-            color="#EC973A"
+            color="bg-[#EC973A]"
             title="Ingenierías"
             subtitles={[
               {
@@ -115,7 +115,7 @@ const FacultadesSection = () => {
           />
           <FacultadItem
             image="https://unmsm.edu.pe/img/facultades/ciencias-economicas-gestion-home-unmsm.png"
-            color="#3A464F"
+            color="bg-[#3A464F]"
             title="Ciencias Económicas y de la Gestión"
             subtitles={[
               {
@@ -135,7 +135,7 @@ const FacultadesSection = () => {
           />
           <FacultadItem
             image="https://unmsm.edu.pe/img/facultades/letras-humanidades-home-unmsm.png"
-            color="#A3371C"
+            color="bg-[#A3371C]"
             title="Humanidades y Ciencias Jurídicas y Sociales"
             subtitles={[
               {

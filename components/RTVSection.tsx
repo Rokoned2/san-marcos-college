@@ -69,8 +69,10 @@ const RTVSection = () => {
             <h2 className="inline text-[2rem] font-bold text-[#3a464f] pr-2 leading-[1.2]">
               RTV - Radio y Televisión San Marcos
             </h2>
-            <p className="inline text-[#b0191c] font-bold">Visitar canal</p>{" "}
-            <HiExternalLink className="inline text-[#b0191c] mb-1.5" />
+            <span className="text-[#b0191c] hover:text-[#70191c] transition-colors cursor-pointer">
+              <p className="inline  font-bold">Visitar canal</p>{" "}
+              <HiExternalLink className="inline mb-1.5" />
+            </span>
           </div>
 
           <div className="relative">
@@ -132,7 +134,10 @@ const RTVSection = () => {
           </div>
           <div className="flex flex-col md:flex-row  xl:space-x-[3.3rem] space-y-4 md:space-y-0">
             {regularNews.map(({ id, title, image }) => (
-              <div className="flex-1 h-[17.25rem] drop-shadow-md" key={id}>
+              <div
+                className="flex-1 h-[17.25rem] drop-shadow-md cursor-pointer"
+                key={id}
+              >
                 <div className="h-[188px]">
                   <img
                     className="object-cover object-center h-full w-full "

@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import FacultadesSection from "../components/FacultadesSection";
-import NewsSection from "../components/MenuData";
+import NewsSection from "../components/NewsSection";
 import PostsSection from "../components/PostsSection";
 import PrincipalSection from "../components/PrincipalSection";
 import RecentPubsSection from "../components/RecentPubsSection";
@@ -21,9 +21,9 @@ const Home: NextPage = () => {
       <PrincipalSection />
       <NewsSection />
       <RTVSection />
-      <div className="bg-[#F2F2F2]">
+      <div className="bg-[#F2F2F2] pt-16 w-full md:pb-10">
         <img
-          className="mx-auto"
+          className="mx-auto object-cover h-[123px]"
           src="https://unmsm.edu.pe/img/backgrounds/separacion.png"
           alt=""
         />
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
       <TestimoniosSections />
       <img
         src="https://unmsm.edu.pe/img/backgrounds/fondo-final-pagina-central.png"
-        className="w-full"
+        className="w-full bg-white pt-10"
         alt=""
       />
     </div>

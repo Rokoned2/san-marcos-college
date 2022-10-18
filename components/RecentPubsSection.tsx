@@ -67,12 +67,14 @@ const RecentPubsSection = () => {
 
   return (
     <section className=" bg-right	bg-no-repeat bg-[length:560px] z-10 bg-[#fff]">
-      <div className="max-w-[510px] md:max-w-[690px] lg:max-w-[930px] xl:max-w-[1110px] mx-auto pt-7 px-4 md:px-0">
-        <div className="mb-5">
+      <div className="max-w-[510px] md:max-w-[690px] lg:max-w-[930px] xl:max-w-[1110px] mx-auto md:pt-32 px-4 md:px-0">
+        <div className="mb-5 md:mb-16">
           <h2 className="inline text-[2rem] font-bold text-[#3a464f] pr-2">
             Publicaciones recientes
           </h2>
-          <p className="inline text-[#b0191c] font-bold">Ver más</p>
+          <p className="inline text-[#b0191c] hover:text-[#70191c] transition-colors cursor-pointer font-bold">
+            Ver más
+          </p>
         </div>
         <div className="relative">
           <Swiper

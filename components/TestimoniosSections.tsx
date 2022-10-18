@@ -38,12 +38,17 @@ const TestimoniosSections = () => {
                 <h2 className="text-[2rem] font-bold text-[#3a464f] pr-2">
                   La comunidad sanmarquina nos cuenta
                 </h2>
-                <p className="text-[#b0191c] font-bold">Ver más</p>
+                <p className="text-[#b0191c] hover:text-[#70191c] transition-colors cursor-pointer font-bold">
+                  Ver más
+                </p>
               </div>
               <div className="md:flex md:space-x-[1.5rem] space-y-14 md:space-y-0">
                 {testimonios.map(
                   ({ image, content, author, facultad }, index) => (
-                    <div className="md:flex-1 relative " key={index}>
+                    <div
+                      className="md:flex-1 relative cursor-pointer"
+                      key={index}
+                    >
                       <div className="absolute left-1/2 -translate-x-1/2 -top-[4.8rem] w-[9.375rem] h-[9.375rem]	">
                         <img className="rounded-full " src={image} alt="" />
                       </div>
@@ -62,7 +67,7 @@ const TestimoniosSections = () => {
             </div>
           </div>
           <img
-            className="mx-auto"
+            className="mx-auto pt-10"
             src="https://unmsm.edu.pe/img/backgrounds/fondo-en-numeros-central.png"
             alt=""
           />

@@ -30,7 +30,7 @@ const FacultadItem: React.FC<FacultadItemProps> = ({
         alt=""
       />
       <div
-        className={`h-full w-full absolute inset-2/4 -translate-x-1/2 -translate-y-1/2 bg-[${color}] opacity-60`}
+        className={`h-full w-full absolute inset-2/4 -translate-x-1/2 -translate-y-1/2 ${color} opacity-60`}
       ></div>
       <p className="text-white text-[1.2rem] h-full w-full absolute inset-2/4 -translate-x-1/2 -translate-y-1/2 md:group-hover:translate-y-24 duration-300 lg:text-2xl flex items-center justify-center text-center px-[4rem]">
         {title}

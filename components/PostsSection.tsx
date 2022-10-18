@@ -31,11 +31,16 @@ const PostsSection = () => {
           <h2 className="inline text-[2rem] font-bold text-[#3a464f] pr-2">
             Educación continua
           </h2>
-          <p className="inline text-[#b0191c] font-bold">Ver más</p>
+          <p className="inline text-[#b0191c] hover:text-[#70191c] transition-colors cursor-pointer font-bold">
+            Ver más
+          </p>
         </div>
         <div className="md:flex space-y-[2.125rem] md:space-y-0 md:space-x-[2.125rem]">
           {posts.map(({ image, title, description }, index) => (
-            <div className="flex-1 md:h-[22.5rem] flex flex-col" key={index}>
+            <div
+              className="flex-1 md:h-[22.5rem] flex flex-col cursor-pointer"
+              key={index}
+            >
               <div className="h-44">
                 <img
                   className="object-cover object-center w-full h-full"
