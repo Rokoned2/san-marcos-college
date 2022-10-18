@@ -14,8 +14,8 @@ const Home: NextPage = () => {
   return (
     <div className="text-[#54626c] font-lato">
       <Head>
-        <title>Página para estudio de abogados</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>UNMSM</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Sidebar />
       <PrincipalSection />
@@ -34,6 +34,7 @@ const Home: NextPage = () => {
       <TestimoniosSections />
       <img
         src="https://unmsm.edu.pe/img/backgrounds/fondo-final-pagina-central.png"
+        className="w-full"
         alt=""
       />
     </div>
