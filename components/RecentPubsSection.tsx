@@ -78,13 +78,32 @@ const RecentPubsSection = () => {
         </div>
         <div className="relative">
           <Swiper
-            className="md:h-[16.625rem] !pb-4 !pr-4"
+            className="md:h-[16.625rem] !pb-4 "
             loop={true}
             navigation={{ prevEl, nextEl }}
             speed={2000}
             parallax={true}
-            slidesPerView={3}
-            spaceBetween={20}
+            // slidesPerView={3}
+            // spaceBetween={20}
+            slidesPerView="auto"
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+              },
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
             modules={[Autoplay, Navigation, Parallax]}
           >
             {recentPublications.map(
